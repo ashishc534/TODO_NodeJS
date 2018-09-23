@@ -1,0 +1,37 @@
+body{
+  background: cyan;
+}
+
+h1{
+  text-align: center;
+  font-size: 40px;
+  color: #072c61;
+  text-shadow: 2px 2px solid grey;
+}
+
+li{
+  cursor: pointer;
+  list-style: none;
+  padding: 2 2 2 10;
+  transition: all 0.1s ease-in-out;
+}
+
+li:hover{
+  text-shadow: 1px 1px maroon;
+  text-decoration: line-through;
+  font-weight: bold;
+  background-color: black;
+  transform: scale(1.1,1.1);
+}
+
+li:first-child{
+  margin-top: 2vh;
+}
+
+.panel-temp{
+  background: #2c323d;
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 2px 2px black;
+  font-family: 'Inconsolata', monospace;
+}

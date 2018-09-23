@@ -1,0 +1,32 @@
+<head>
+  <% include partials/sheets %>
+</head>
+
+<body style="background: #1b212b;">
+  <div class="row">
+    <div class="col-md-6 offset-2">
+        <div class="form-group">
+          <input id="add_item" type="text" name="item" placeholder="Add Item..." class="form-control">
+        </div>
+    </div>
+    <div class="col-3">
+        <input id="submit_item" type="button" class="btn btn-info" value="Add Item">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 offset-3">
+      <div class="panel panel-temp">
+        <div class="row">
+          <div class="col-md-8">
+            <ul id="items_list">
+              <% for (var i=0;i<todos.length;i++) {%>
+                <li><%=todos[i].item%></li>
+                <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

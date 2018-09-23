@@ -1,15 +1,13 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-var todoController = require('./controllers/todoController');
+var todoController = require('./controllers/todoController.js');
 
 var app = express();
-var urlEncodedParser = bodyParser.urlencoded({extended:false});
 
 //Set up view engine.
 app.set("view engine","ejs");
 
 //Static files
-app.use(express.static(./public));
+app.use(express.static('./public'));
 
 //Fire Up Controllers
 todoController(app);
