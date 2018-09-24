@@ -15,13 +15,47 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4 offset-3">
-      <div class="panel panel-temp">
+    <div class="col-md-3 offset-2">
+      <div class="panel panel-info panel-unfinished">
+        <div class="panel-heading text-center">UnFinished</div>
+      </div>
+      <div class="panel-body panel-body-unfinished">
         <div class="row">
           <div class="col-md-8">
             <ul id="items_list">
-              <% for (var i=0;i<todos.length;i++) {%>
-                <li><%=todos[i].item%></li>
+              <% for (var i=0;ongoing && i<ongoing.length;i++) {%>
+                  <div class="dropdown">
+                    <li class="dropbtn"><%=ongoing[i].item%></li>
+                      <div class="dropdown-content" id="<%=ongoing[i].item%>">
+                        <li id="completed">Complete</li>
+                        <li id="remove">Remove</li>
+                      </div>
+                  </div>
+                  <br/>
+                <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="panel panel-info panel-completed">
+        <div class="panel-heading text-center">Completed</div>
+      </div>
+      <div class="panel-body panel-body-completed">
+        <div class="row">
+          <div class="col-md-8">
+            <ul id="items_list">
+              <% for (var i=0;completed && i<completed.length;i++) {%>
+                  <div class="dropdown">
+                    <li class="dropbtn"><%=completed[i].item%></li>
+                      <div class="dropdown-content" id="<%=completed[i].item%>">
+                        <li id="un_completed">Un-Complete</li>
+                        <li id="remove">Remove</li>
+                      </div>
+                  </div>
+                  <br/>
                 <% } %>
             </ul>
           </div>

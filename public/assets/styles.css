@@ -11,27 +11,68 @@ h1{
 
 li{
   cursor: pointer;
-  list-style: none;
+  list-style:circle;
   padding: 2 2 2 10;
   transition: all 0.1s ease-in-out;
 }
 
-li:hover{
-  text-shadow: 1px 1px maroon;
-  text-decoration: line-through;
+.dropbtn:hover{
   font-weight: bold;
-  background-color: black;
-  transform: scale(1.1,1.1);
+  transform: scale(1.15,1.15);
 }
 
 li:first-child{
   margin-top: 2vh;
 }
 
-.panel-temp{
+.panel-unfinished , .panel-completed{
   background: #2c323d;
   color: white;
   font-size: 1.2em;
+  margin-top: 2vh;
+  border: 1px solid #fff;
   text-shadow: 2px 2px black;
   font-family: 'Inconsolata', monospace;
+}
+
+.panel-body-unfinished, .panel-body-completed{
+  margin-top: 1vh;
+  background-color: #eee;
+  border: 2px solid black;
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content li{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+#completed , #remove, #un_completed{
+  color: black;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+#completed:hover, #remove:hover, #un_completed:hover{
+  background-color: #eee;
 }

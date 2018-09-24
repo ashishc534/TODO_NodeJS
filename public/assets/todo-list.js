@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('#submit_item').on('click',function() {
 
     var item = $('#add_item');
-    var todo = {item: item.val()};
+    var todo = {item: item.val(),completed:false};
 
     $.ajax({
 
@@ -17,9 +17,9 @@ $(document).ready(function(){
     });
   });
 
-  $('li').on('click',function(){
+  $('#remove').on('click',function(){
 
-    var item = $(this).text().replace(/ /g, "-");
+    var item = event.target.parentNode.getAttribute('id').replace(/ /g,"-");
 
     $.ajax({
 
@@ -27,6 +27,33 @@ $(document).ready(function(){
       url:'/todo/' + item,
       success: function(data){
 
+        location.reload();
+      }
+    });
+  });
+
+  $('#completed').on('click',function(){
+
+    var item = event.target.parentNode.getAttribute('id').replace(/ /g,"-");
+    $.ajax({
+
+      type: 'POST',
+      url: '/todo/complete/' + item,
+      success: function(data){
+
+        location.reload();
+      }
+    });
+  });
+
+  $('#un_completed').on('click',function(){
+
+    var item = event.target.parentNode.getAttribute('id').replace(/ /g,"-");
+    $.ajax({
+
+      type: 'POST',
+      url: '/todo/uncomplete/' + item,
+      success: function(data){
         location.reload();
       }
     });
